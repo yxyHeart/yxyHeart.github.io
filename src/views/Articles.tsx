@@ -52,6 +52,7 @@ export default function Articles(props: ArticlesProps) {
     useCallback(async () => {
       if (category?.number !== props.milestone) {
         const milestones = await github.listMilestones();
+        console.log(milestones)
         const milestone = milestones.find((m) => m.number === props.milestone);
 
         if (!milestone) {
@@ -111,7 +112,6 @@ export default function Articles(props: ArticlesProps) {
               />
             ))}
       </List>
-
       <Foot>
         <Pagination
           page={query.page}

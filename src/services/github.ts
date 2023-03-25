@@ -171,7 +171,6 @@ class Github {
   public async listMilestones(options: ListMilestonesOptions = {}): Promise<Milestone[]> {
     const { state, sort, direction, page, pageSize } = options;
     const query = { state, sort, direction, page, per_page: pageSize };
-
     return this.request('GET', `/repos/${this.owner}/${this.repo}/milestones`, query);
   }
 
