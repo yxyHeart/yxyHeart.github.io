@@ -12,7 +12,7 @@
     "build": "vite build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://yxyHeart.github.io/blog-without_backend/",
+  "homepage": "https://yxyHeart.github.io/",
   "author": "varharrie <varharrie@gmail.com>",
   "license": "MIT",
   "dependencies": {
