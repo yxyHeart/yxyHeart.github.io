@@ -1,6 +1,6 @@
 # yxy's Blog
 
-Personal blog site based on github issues.
+<!-- Personal blog site based on github issues.
 
 ## Features
 
@@ -15,5 +15,5 @@ Personal blog site based on github issues.
 1. Clone the repository: `git clone https://github.com/yxy/varharrie.github.io.git`
 2. Install dependencies: `yarn`
 3. Rename .env.example to .env.local and Modify its content
-4. Start dev server: `yarn run dev`
+4. Start dev server: `yarn run dev` -->
 
