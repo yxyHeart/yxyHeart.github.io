@@ -31,7 +31,7 @@ export default function Projects() {
       setProjects(
         list
           .map(ProjectModel.from)
-          .filter((p) => p.stargazersCount > 0 && !p.archived && !p.disabled)
+          .filter((p) => p.stargazersCount >= 0 && !p.archived && !p.disabled)
           .sort((a, b) => b.stargazersCount - a.stargazersCount),
       );
     }, []),
@@ -40,8 +40,9 @@ export default function Projects() {
 
   useEffect(() => {
     loadProject();
+    console.log(projects)
   }, []);
-
+  
   return (
     <Wrapper>
       <Title>{t('projects.title')}</Title>
