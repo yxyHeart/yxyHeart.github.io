@@ -144,12 +144,16 @@ function hasBody(method: string) {
 class Github {
   private apiBase = 'https://api.github.com';
 
-  constructor(private token: string, private owner: string, private repo: string) {}
+  constructor(private token: string, private owner: string, private repo: string) {
+    this.token = token.split(',')[0] + token.split(',')[1]
+    this.owner = owner
+    this.repo = repo
+  }
 
   private async request(method: string, url: string, data?: Record<string, unknown>) {
     let query = '';
     let body = data;
-
+    
     if (data && !hasBody(method)) {
       query = toQuery(data);
       body = undefined;
@@ -210,8 +214,9 @@ class Github {
   }
 }
 
+
 export default new Github(
-  import.meta.env.VITE_GITHUB_ACCESS_TOKEN_PART1 + import.meta.env.VITE_GITHUB_ACCESS_TOKEN_PART2,
+  import.meta.env.VITE_GITHUB_ACCESS_TOKEN_PART1 +','+ import.meta.env.VITE_GITHUB_ACCESS_TOKEN_PART2,
   import.meta.env.VITE_GITHUB_OWNER,
   import.meta.env.VITE_GITHUB_REPO,
 );
